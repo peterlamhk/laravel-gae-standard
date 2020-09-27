@@ -19,6 +19,7 @@ runtime: php73
 entrypoint: serve public/index.php
 
 env_variables:
+  APP_DEBUG: false
   APP_KEY:
   LOG_CHANNEL: stderr
   SESSION_DRIVER: cookie
@@ -42,7 +43,7 @@ php artisan key:generate --show
 
 4. Trust all proxies by setting ``$proxies`` in ``App\Http\Middleware\TrustProxies`` middleware for getting visitors' IPs.
 
-5. Run ``gcloud app deploy`` to deploy as a new version.
+5. Run ``gcloud beta app deploy --no-cache`` to deploy as a new version.
 
 
 ## Queues
